@@ -7,8 +7,8 @@ $8,350 is taxed at 10% and the other $1,650 is taxed at 15%, so your total tax i
 
 Table 3.2 2009 U.S. Federal Personal Tax Rates
 
-Marginal           Single          Married Filing Jointly or      Married Filing Separately        Head of Household
-Tax Rate                               Qualifying Widow(er)
+|Marginal Tax Rate |Single|Married Filing Jointly or Married Filing Separately|Head of Household|
+                              Qualifying Widow(er)
 -------------------------------------------------------------------------------------------------------------------
   10%            $0–$8,350                   $0–$16,700                      $0–$8,350                $0–$11,950
   15%           $8,351–$33,950             $16,701–$67,900                  $8,351–$33,950          $11,951–$45,500
