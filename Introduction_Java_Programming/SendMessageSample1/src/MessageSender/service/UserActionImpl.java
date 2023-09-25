@@ -49,4 +49,26 @@ public class UserActionImpl implements  UserAction<User>{
         }
         return null;
     }
+
+    public User LoginCheck(String UserName,String Password)
+    {
+        User user=findByUsername(UserName);
+        if(user!=null)
+        {
+            if(user.getPassword().equals(Password))
+            {
+                return user;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        else
+        {
+            return null;
+
+        }
+    }
+
 }
