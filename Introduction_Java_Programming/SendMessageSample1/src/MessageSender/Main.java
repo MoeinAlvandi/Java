@@ -27,7 +27,7 @@ public class Main {
 
         boolean IsValidinputMenueUser=true;
         boolean IsValidinputMenueMessageUser=true;
-
+        boolean IsValidinputMenueGuest=true;
         String username = "";
         String oldUserName ="";
         String newUserName="";
@@ -216,7 +216,9 @@ public class Main {
                                 switch (inputMessageMenue) {
                                     case 1:
                                         System.out.print("Please Enter Your Message : ");
-                                        UserMessageText=scanner.next();
+                                        scanner.nextLine();
+                                        UserMessageText=scanner.nextLine();
+
                                         messageAction.SendMessage(UserSuccessLogin,UserMessageText);
                                         System.out.println("Cong, Your Message Send Successfully!");
                                         System.out.println();
@@ -235,7 +237,25 @@ public class Main {
                         exit(0);
                     }
 
+                case 2 :
+                    //register
+                    System.out.println("------------------------------------------");
+                    System.out.print("Enter Your Username: ");
+                    username = scanner.next();
 
+                    System.out.println();
+                    System.out.print("Enter Your Password: ");
+                    password = scanner.next();
+
+                    userGuest  = new User();
+                    userGuest.setUsername(username);
+                    userGuest.setPassword(password);
+                    userGuest.setType(UserType.GUEST);
+                    userAction.create(userGuest);
+                    System.out.print("user registered successfully " );
+                    break;
+                case 3 :
+                  exit(0);
             }
 
         }
