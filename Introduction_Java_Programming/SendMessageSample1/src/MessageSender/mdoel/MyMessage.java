@@ -40,8 +40,8 @@ public class MyMessage {
     @Override
     public String toString() {
         return  MessageText +
-                "-" + user.getUsername() + "-"+
-                "(" + SendDate + ")";
+                " - " + user.getUsername() + " - "+
+                "( " + SendDate + " )";
     }
 
 

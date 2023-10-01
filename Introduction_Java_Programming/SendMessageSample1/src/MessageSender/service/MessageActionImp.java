@@ -16,6 +16,7 @@ public class MessageActionImp implements IMessageInteface{
     public void SendMessage(User user, String messageText) {
     MyMessage myMessage=new MyMessage(messageText,user);
     AllMessage.put(MapKey,myMessage);
+    MapKey++;
     }
 
     @Override

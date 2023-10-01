@@ -16,6 +16,7 @@ public class Main {
     public static Set<User> users = new HashSet<>();
     public static Map<Integer, MyMessage> AllMessage= new LinkedHashMap<>();
     public static Integer MapKey=1;
+
     public static void main(String[] args) {
         //--------------init-------------
         Scanner scanner = new Scanner(System.in);
@@ -52,6 +53,9 @@ public class Main {
 
 
         while (true) {
+           try{
+
+
             System.out.println("------------ Messenger --------");
             System.out.println("---Welcome to Messenger App---");
             System.out.println("================================");
@@ -94,14 +98,14 @@ public class Main {
                                 System.out.println("# 6- Show All Message");
                                 System.out.println("# 7- exit");
                                 do {
-                                    System.out.println("Enter action(1 to 5): ");
+                                    System.out.println("Enter action(1 to 7): ");
                                     while (!scanner.hasNextInt()) {
                                         System.out.println("Error- Please Enter Number only");
                                         scanner.next(); // this is important!
                                     }
                                     inputMenueUser1 = scanner.nextInt();
                                     if (inputMenueUser1 <= 0 || inputMenueUser1 > 7)
-                                        System.out.println("Error- Please Enter Number Between 1 And 5");
+                                        System.out.println("Error- Please Enter Number Between 1 And 7");
 
                                 } while (inputMenueUser1 <= 0 || inputMenueUser1 > 7);
                                 switch (inputMenueUser1) {
@@ -163,7 +167,7 @@ public class Main {
                                         IsValidinputMenueUser=true;
                                         System.out.print("Enter old Username: ");
                                         oldUserName = scanner.next();
-                                        System.out.print("Enter old Username: ");
+                                        System.out.print("Enter new Username: ");
                                         newUserName = scanner.next();
 
                                         User user2 = new User();
@@ -185,6 +189,21 @@ public class Main {
                                         }
                                         System.out.println("Please Enter any Key : ");
                                         scanner.next();
+                                        break;
+                                    case 5:
+                                        System.out.print("Please Enter Your Message : ");
+                                        scanner.nextLine();
+                                        UserMessageText=scanner.nextLine();
+
+                                        messageAction.SendMessage(UserSuccessLogin,UserMessageText);
+                                        System.out.println("Cong, Your Message Send Successfully!");
+                                        System.out.println();
+                                        //-System.out.println("Send Message  : ");
+                                        break;
+
+                                    case 6 :
+                                        System.out.println("Show all  Messages  : ");
+                                        messageAction.printAllMessage(AllMessage);
                                         break;
                                     case 7:
                                        // System.out.println("Thanks A lot.See You Later");
@@ -257,7 +276,14 @@ public class Main {
                 case 3 :
                   exit(0);
             }
-
+           }
+           catch (Exception ex)
+           {
+               System.out.println(ex.toString());
+               System.out.println("System Error.Please try again");
+           }
         }
+
+
     }
 }
