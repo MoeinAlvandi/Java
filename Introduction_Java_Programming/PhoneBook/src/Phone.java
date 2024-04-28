@@ -26,4 +26,13 @@ public class Phone {
     public void setPhoneNo(String phoneNo) {
         PhoneNo = phoneNo;
     }
+
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "id=" + id +
+                ", Name='" + Name + '\'' +
+                ", PhoneNo='" + PhoneNo + '\'' +
+                '}';
+    }
 }
